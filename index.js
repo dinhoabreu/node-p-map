@@ -1,7 +1,7 @@
 const defaultOptions = { concurrency: Infinity, rejectOnError: true }
 const noop = () => {}
 
-const aMap = (mapper, options = defaultOptions) => (iterable, progress = noop) => {
+const pMap = (mapper, options = defaultOptions) => (iterable, progress = noop) => {
   const results = []
   const context = {
     resolve: null,
@@ -81,4 +81,4 @@ const createRun = (state, context, next) => () => {
   }
 }
 
-module.exports = aMap
+module.exports = pMap
